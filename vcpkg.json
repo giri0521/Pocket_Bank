@@ -1,0 +1,13 @@
+{
+  "name": "pocketbank",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "nlohmann-json",
+    "spdlog",
+    "cpp-httplib",
+    "sqlite3",
+    "gtest",
+    "benchmark"
+  ],
+  "builtin-baseline": "d1f9b2a9c0e42f8796c5a9b0a0a1e6c1b64f7d4a"
+}
