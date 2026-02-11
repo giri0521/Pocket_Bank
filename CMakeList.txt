@@ -1,0 +1,34 @@
+# CMakeLists.txt (root)
+cmake_minimum_required(VERSION 3.21)
+project(PocketBank VERSION 0.1.0 LANGUAGES CXX)
+
+# Use C++20
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# If using vcpkg toolchain, these find_package calls will resolve automatically.
+# Ensure vcpkg.json exists at project root.
+
+# Example: only enable these find_package calls once you've added code that uses them.
+# find_package(nlohmann_json CONFIG REQUIRED)
+# find_package(spdlog CONFIG REQUIRED)
+# find_package(httplib CONFIG REQUIRED)
+# find_package(unofficial-sqlite3 CONFIG REQUIRED) # sqlite3 is usually 'unofficial-sqlite3' in vcpkg
+# find_package(GTest CONFIG REQUIRED)                # for tests
+# find_package(benchmark CONFIG REQUIRED)            # for benchmarks
+
+add_executable(pocketbank src/main.cpp)
+
+# Link libraries as you start to use them in code. For now, we compile main only.
+# target_link_libraries(pocketbank PRIVATE
+#   nlohmann_json::nlohmann_json
+#   spdlog::spdlog
+#   httplib::httplib
+#   unofficial::sqlite3::sqlite3
+#)
+
+# Nice warnings for Clang/GCC
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+  target_compile_options(pocketbank PRIVATE -Wall -Wextra -Wpedantic)
+endif()
