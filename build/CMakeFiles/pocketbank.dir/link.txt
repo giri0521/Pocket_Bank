@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/pocketbank.dir/link.d CMakeFiles/pocketbank.dir/src/main.cpp.o -o pocketbank  libpocketbank_lib.a /usr/lib/libspdlog.so.1.16.0 /usr/lib/libfmt.so.11.2.0 /usr/lib/libsqlite3.so

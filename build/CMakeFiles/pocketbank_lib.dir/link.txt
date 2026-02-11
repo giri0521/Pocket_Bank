@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpocketbank_lib.a CMakeFiles/pocketbank_lib.dir/src/main.cpp.o
+/usr/bin/ranlib libpocketbank_lib.a

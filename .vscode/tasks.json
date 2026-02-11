@@ -1,0 +1,94 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", ".",
+        "-B", "build",
+        "-G", "Ninja",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/cmake/vcpkg-toolchain.cmake"
+      ],
+      "group": "build",
+      "problemMatcher": ["$cmake"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--parallel"],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "dependsOn": ["CMake: Configure"]
+    },
+    {
+      "label": "CMake: Build (Release)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", ".",
+        "-B", "build",
+        "-G", "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/cmake/vcpkg-toolchain.cmake"
+      ],
+      "group": "build",
+      "problemMatcher": ["$cmake"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "CTest: Run Tests",
+      "type": "shell",
+      "command": "ctest",
+      "args": [
+        "--test-dir", "build",
+        "--output-on-failure",
+        "--parallel"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "dependsOn": ["CMake: Build"]
+    },
+    {
+      "label": "vcpkg: Install Dependencies",
+      "type": "shell",
+      "command": "./vcpkg/vcpkg",
+      "args": [
+        "install",
+        "--triplet", "x64-linux"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

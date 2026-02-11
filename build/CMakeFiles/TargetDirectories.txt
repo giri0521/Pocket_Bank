@@ -1,0 +1,10 @@
+/workspaces/Pocket_Bank/build/CMakeFiles/pocketbank_lib.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/pocketbank.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/pocketbank_tests.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/test.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/edit_cache.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/rebuild_cache.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/list_install_components.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/install.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/install/local.dir
+/workspaces/Pocket_Bank/build/CMakeFiles/install/strip.dir

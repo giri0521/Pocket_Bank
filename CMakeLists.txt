@@ -5,19 +5,19 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Enable sanitizers for debug
-if(CMAKE_BUILD_TYPE MATCHES "Debug")
-  add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
-  add_link_options(-fsanitize=address,undefined)
-endif()
+# Enable sanitizers for debug (disabled on Alpine/musl - causes incompatibilities)
+# if(CMAKE_BUILD_TYPE MATCHES "Debug")
+#   add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
+#   add_link_options(-fsanitize=address,undefined)
+# endif()
 
 # vcpkg integration expected via devcontainer settings
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
-find_package(httplib CONFIG REQUIRED)
+# find_package(httplib CONFIG REQUIRED)  # Not in Alpine repos
 find_package(SQLite3 REQUIRED)
 find_package(GTest CONFIG REQUIRED)
-find_package(benchmark CONFIG REQUIRED)
+# find_package(benchmark CONFIG REQUIRED)  # Not in Alpine repos
 
 # Library
 file(GLOB POCKETBANK_SOURCES CONFIGURE_DEPENDS
@@ -33,7 +33,8 @@ target_link_libraries(pocketbank_lib
 
 # Executable
 add_executable(pocketbank src/main.cpp)
-target_link_libraries(pocketbank PRIVATE pocketbank_lib httplib::httplib)
+# target_link_libraries(pocketbank PRIVATE pocketbank_lib httplib::httplib)
+target_link_libraries(pocketbank PRIVATE pocketbank_lib)
 
 # Tests
 enable_testing()
@@ -42,9 +43,9 @@ target_link_libraries(pocketbank_tests PRIVATE pocketbank_lib GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(pocketbank_tests)
 
-# Benchmarks
-add_executable(pocketbank_bench benchmarks/bench_ledger.cpp)
-target_link_libraries(pocketbank_bench PRIVATE pocketbank_lib benchmark::benchmark)
+# Benchmarks (disabled - benchmark library not available in Alpine)
+# add_executable(pocketbank_bench benchmarks/bench_ledger.cpp)
+# target_link_libraries(pocketbank_bench PRIVATE pocketbank_lib benchmark::benchmark)
 
 # Install (later for packaging)
 install(TARGETS pocketbank pocketbank_lib)

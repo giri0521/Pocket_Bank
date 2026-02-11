@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/workspaces/Pocket_Bank/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/workspaces/Pocket_Bank/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/workspaces/Pocket_Bank/include -g -std=gnu++20 -o CMakeFiles/pocketbank_lib.dir/src/main.cpp.o -c /workspaces/Pocket_Bank/src/main.cpp",
+  "file": "/workspaces/Pocket_Bank/src/main.cpp",
+  "output": "CMakeFiles/pocketbank_lib.dir/src/main.cpp.o"
+},
+{
+  "directory": "/workspaces/Pocket_Bank/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/workspaces/Pocket_Bank/include -g -std=gnu++20 -o CMakeFiles/pocketbank.dir/src/main.cpp.o -c /workspaces/Pocket_Bank/src/main.cpp",
+  "file": "/workspaces/Pocket_Bank/src/main.cpp",
+  "output": "CMakeFiles/pocketbank.dir/src/main.cpp.o"
+},
+{
+  "directory": "/workspaces/Pocket_Bank/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/workspaces/Pocket_Bank/include -g -std=gnu++20 -o CMakeFiles/pocketbank_tests.dir/tests/test_basic.cpp.o -c /workspaces/Pocket_Bank/tests/test_basic.cpp",
+  "file": "/workspaces/Pocket_Bank/tests/test_basic.cpp",
+  "output": "CMakeFiles/pocketbank_tests.dir/tests/test_basic.cpp.o"
+},
+{
+  "directory": "/workspaces/Pocket_Bank/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/workspaces/Pocket_Bank/include -g -std=gnu++20 -o CMakeFiles/pocketbank_tests.dir/tests/test_ledger.cpp.o -c /workspaces/Pocket_Bank/tests/test_ledger.cpp",
+  "file": "/workspaces/Pocket_Bank/tests/test_ledger.cpp",
+  "output": "CMakeFiles/pocketbank_tests.dir/tests/test_ledger.cpp.o"
+}
+]

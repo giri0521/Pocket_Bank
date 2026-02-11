@@ -1,36 +1,35 @@
 {
-  "name": "PocketBank (C++ Dev)",
-  "image": "mcr.microsoft.com/devcontainers/cpp:0-ubuntu-22.04",
+  "name": "Pocket_Bank (C++ Dev)",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/llvm:1": {
-      "version": "18"
-    },
     "ghcr.io/devcontainers/features/cmake:1": {},
     "ghcr.io/devcontainers/features/vcpkg:1": {}
   },
-  "postCreateCommand": "vcpkg install && cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G Ninja && cmake --build build",
+  "postCreateCommand": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build",
   "customizations": {
     "vscode": {
       "settings": {
         "cmake.generator": "Ninja",
         "cmake.buildDirectory": "build",
         "cmake.configureSettings": {
-          "CMAKE_TOOLCHAIN_FILE": "${containerWorkspaceFolder}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+          "CMAKE_TOOLCHAIN_FILE": "${containerWorkspaceFolder}/cmake/vcpkg-toolchain.cmake"
         },
-        "C_Cpp.default.compilerPath": "/usr/bin/clang++",
-        "editor.formatOnSave": true
+        "C_Cpp.default.compilerPath": "/usr/bin/g++",
+        "C_Cpp.default.cStandard": "c17",
+        "C_Cpp.default.cppStandard": "c++20",
+        "editor.formatOnSave": false,
+        "cmake.configureOnOpen": false
       },
       "extensions": [
         "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
         "ms-vscode.cmake-tools",
-        "xaver.clang-format",
-        "llvm-vs-code-extensions.vscode-clangd",
         "twxs.cmake",
-        "ms-azuretools.vscode-docker"
+        "xaver.clang-format"
       ]
     }
   },
-  "forwardPorts": [8080]
+  "forwardPorts": [8080],
+  "remoteUser": "root"
 }

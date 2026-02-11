@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/pocketbank_tests.dir/link.d CMakeFiles/pocketbank_tests.dir/tests/test_basic.cpp.o CMakeFiles/pocketbank_tests.dir/tests/test_ledger.cpp.o -o pocketbank_tests  libpocketbank_lib.a /usr/lib/libgtest_main.so.1.17.0 /usr/lib/libspdlog.so.1.16.0 /usr/lib/libfmt.so.11.2.0 /usr/lib/libsqlite3.so /usr/lib/libgtest.so.1.17.0

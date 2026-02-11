@@ -1,0 +1,5 @@
+if(EXISTS "/workspaces/Pocket_Bank/build/pocketbank_tests[1]_tests.cmake")
+  include("/workspaces/Pocket_Bank/build/pocketbank_tests[1]_tests.cmake")
+else()
+  add_test(pocketbank_tests_NOT_BUILT pocketbank_tests_NOT_BUILT)
+endif()
