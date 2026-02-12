@@ -6,7 +6,7 @@
     "ghcr.io/devcontainers/features/cmake:1": {},
     "ghcr.io/devcontainers/features/vcpkg:1": {}
   },
-  "postCreateCommand": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build",
+  "postCreateCommand": "vcpkg integrate install && ./vcpkg/bootstrap-vcpkg.sh || true",
   "customizations": {
     "vscode": {
       "settings": {
