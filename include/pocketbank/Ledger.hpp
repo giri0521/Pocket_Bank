@@ -3,7 +3,7 @@
 #include <vector>
 #include <optional>
 
-namespace packetbank {
+namespace pocketbank {
     struct Transaction {
         std::string id;
         std::string account;
