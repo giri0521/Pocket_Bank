@@ -1,9 +1,8 @@
 #include <iostream>
-#include "ledger.hpp"
-
-using namespace std;
+#include <string>
+#include <vector>
 
 int main() {
-    cout << "Welcome to Pocket Bank!" << endl;
+    std::cout << "Welcome to Pocket Bank!" << std::endl;
     return 0;
 }
